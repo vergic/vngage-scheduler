@@ -1,0 +1,2 @@
+// Export a transpiled, minified and stringified code of timerWorker.
+export { default as timerWorkerSrc } from "raw-loader!../../minify-loader!babel-loader?{\"presets\": [ [\"env\", { \"modules\": false }] ] }!./timerWorker.js"

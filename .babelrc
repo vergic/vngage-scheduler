@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "check-es2015-constants",
+    "transform-object-rest-spread",
+    "transform-runtime"
+  ]
+}
