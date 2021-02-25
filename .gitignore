@@ -1,8 +1,5 @@
 .DS_Store
 node_modules/
-dist/
-dist-es/
-dist-modern/
 package-lock.json
 
 # Webstorm
