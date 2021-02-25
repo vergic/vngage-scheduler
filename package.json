@@ -1,6 +1,6 @@
 {
   "name": "vngage-scheduler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An alternative implementation of window.setInterval(), etc, that uses web workers to avoid throttling",
   "main": "dist/vngage-scheduler.js",
   "dependencies": {
@@ -24,7 +24,8 @@
     "webpack-cli": "^4.5.0"
   },
   "scripts": {
-    "build": "npm run clean && webpack -c webpack.prod.config.js",
+    "build": "npm run build:prod && npm run build:dev",
+    "build:prod": "npm run clean && webpack -c webpack.prod.config.js",
     "build:dev": "webpack -c webpack.dev.config.js",
     "clean": "rm -fr dist",
     "prepublishOnly": "npm run build"
