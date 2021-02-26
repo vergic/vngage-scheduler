@@ -1,5 +1,4 @@
-let intervals = {};
-let timeouts = {};
+const timers = {};
 
 self.addEventListener('message', e => {
     if (!e || !e.data || typeof e.data.action !== 'string') {
@@ -8,30 +7,36 @@ self.addEventListener('message', e => {
 
     switch (e.data.action) {
         case 'setInterval':
-            intervals[e.data.id] = setInterval(() => {
+            timers[e.data.id] = setInterval(() => {
                 self.postMessage({
-                    type: 'interval',
+                    type: 'callback',
                     id: e.data.id
                 });
             }, e.data.interval);
             break;
         case 'clearInterval':
-            if (intervals[e.data.id]) {
-                clearInterval(intervals[e.data.id]);
+            if (timers[e.data.id]) {
+                clearInterval(timers[e.data.id]);
+                delete timers[e.data.id];
             }
             break;
         case 'setTimeout':
-            timeouts[e.data.id] = setTimeout(() => {
+            timers[e.data.id] = setTimeout(() => {
                 self.postMessage({
-                    type: 'timeout',
+                    type: 'callback',
                     id: e.data.id
                 });
+                delete timers[e.data.id];
             }, e.data.timeout);
             break;
         case 'clearTimeout':
-            if (timeouts[e.data.id]) {
-                clearTimeout(timeouts[e.data.id]);
+            if (timers[e.data.id]) {
+                clearTimeout(timers[e.data.id]);
+                delete timers[e.data.id];
             }
+            break;
+        case 'debug':
+            console.log('timerWorker timers', timers);
             break;
         default:
             console.error('Unknown action', e)

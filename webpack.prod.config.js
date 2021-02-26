@@ -8,10 +8,8 @@ module.exports = {
     filename: 'vngage-scheduler.min.js',
     library: 'vngage-scheduler',
     libraryTarget: 'umd',
-    // libraryTarget: 'amd-require',
     globalObject: 'this',
-    //umdNamedDefine: true,
-    //umdNamedDefine: false,
+    umdNamedDefine: true,
   },
   target: ['web', 'es5'],
   module: {
