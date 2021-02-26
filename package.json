@@ -30,6 +30,6 @@
     "build:prod": "webpack -c webpack.prod.config.js",
     "clean": "rm -fr dist",
     "release": "npm run clean && npm run build",
-    "watch" : "onchange \"src/**/*.js\" -- npm run build"
+    "watch": "onchange \"src/**/*.js\" -- npm run build"
   }
 }

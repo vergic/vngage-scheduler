@@ -85,8 +85,8 @@ try {
     // NOTE: extra parameters to setTimeout() and setInterval() is not supported
     // console.error('Scheduler init failed. Fallback to native timers');
     scheduler = {
-        setInterval: (fn, int) => window.setInterval(fn, int),
-        setTimeout: (fn) => window.setTimeout(fn),
+        setInterval: (fn, interval) => window.setInterval(fn, interval),
+        setTimeout: (fn, timeout) => window.setTimeout(fn, timeout),
         clearInterval: (id) => window.clearInterval(id),
         clearTimeout: (id) => window.clearTimeout(id),
         _debug: () => {console.log('Scheduler fallback to native timers')}
