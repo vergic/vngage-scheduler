@@ -1,6 +1,6 @@
 {
   "name": "vngage-scheduler",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An alternative implementation of window.setInterval(), etc, that uses web workers to avoid throttling",
   "main": "dist/vngage-scheduler.js",
   "dependencies": {
